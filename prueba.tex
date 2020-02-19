@@ -1,11 +1,55 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage[spanish]{babel}
 \title{Apuntes de programación lineal}
 \author{Daniela}
 
+\setlength{\parindent}{0cm}
 \begin{document}
 \maketitle
+\tableofcontents
+\section{Forma estandar}
+\label{sec:forma-estandar}
+
+
 La forma estándar de un problema de programación líneal es:
-Dandos una matriz $A$ y vectores $b,c$, máximizar $c^Tx$ sujet a $Ax\leq b$ 
+
+
+Dados una matriz $A$ y vectores $b,c$, máximizar $c^Tx$ sujet a $Ax\leq b$
+
+
+\section{Forma simplex}
+\label{sec:forma-simplex}
+
+
+Para escribir dicho problema en forma simplex se introduce una variable de holgura por cada una de las restricciones, para convertirlas en igualdades.
+Entonces la forma simplex es:\\\\Dados una matriz $B$ y vectores $b,c$, máximizar $c^Tx$ sujeto a $Bx=b$ \\\\
+
+
+\begin{tabular}{|c|c|c|}
+  \hline
+  & A & B \\
+  \hline
+  Máquina 1 & 1 & 2 \\
+  \hline
+  Máquina 2 & 1 & 1 \\
+  \hline
+    
+\end{tabular}
+\bigskip
+
+\begin{equation}
+  \label{eq:1}
+  A=
+  \begin{pmatrix}
+    0 & 1 & 2 \\
+    3 & -1 & 5
+  \end{pmatrix}
+  \begin{pmatrix}
+    2 & 6 & 9\\
+    4 & 3 & 0
+   \end{pmatrix}
+ \end{equation}
 \end{document}
 
