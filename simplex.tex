@@ -1,0 +1,88 @@
+\documentclass{article}
+
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\title{Método Simplex}
+\author{Daniela}
+
+\begin{document}
+\maketitle
+\section{Introducción}
+\label{sec:introduccion}
+
+El método simplex es un algoritmo para resolver problemas de programación lineal. Fue inventado por George Dantzin en el año 1947
+
+\section{Ejemplo}
+Resuelve el problema por el método simplex.
+\begin{equation*}
+  \begin{aligned}
+    \text{Maximizar} \quad & 2x_1+x_2\\
+    \text{sujeto a} \quad &
+    \begin{aligned}
+      x_1+x_2 &\geq 1\\
+      3x_1+4x_2 &\leq 12\\
+      x_1-x_2 &\leq 2\\
+      -2x_1+x_2 &\leq 2\\
+      x_1,x_2 &\geq 0
+     
+    \end{aligned}
+  \end{aligned}
+
+\end{equation*}
+
+Primeramente escribimos el problema en su forma estandar, para ellos multiplicamos la primera desigualdad por -1.\\
+
+El problema es equivalente a:\\
+
+\begin{equation*}
+  \begin{aligned}
+    \text{Maximizar} \quad & 2x_1+x_2\\
+    \text{sujeto a} \quad &
+    \begin{aligned}
+      -x_1-x_2 &\leq -1\\
+      3x_1+4x_2 &\leq 12\\
+      x_1-x_2 &\leq 2\\
+      -2x_1+x_2 &\leq 2\\
+      x_1,x_2 &\geq 0
+     
+    \end{aligned}
+  \end{aligned}
+
+\end{equation*}
+Una vez que hemos escrito el problema en forma estandar, procedemos a escribirlo en forma simplex, para ello agregamos una variable de houlgura por cada una de las desigualdades.
+Sea $x_3, x_4, x_5, x_6 \geq 0$. El problema se transforma a:
+\begin{equation*}
+  \begin{aligned}
+    \text{Maximizar} \quad & 2x_1+x_2\\
+    \text{sujeto a} \quad &
+    \begin{aligned}
+      -x_1-x_2 + x_3 = -1\\
+      3x_1+4x_2 +x_4= 12\\
+      x_1-x_2 + x_5 =2\\
+      -2x_1+x_2 + x_6=  2\\
+      x_1,x_2,x_3, x_4, x_5, x_ &\geq 0
+     
+    \end{aligned}
+  \end{aligned}
+
+\end{equation*}
+
+A conrinuación obtenemos un \emph{tablero simplex}, despejando las variables de holgura.
+\begin{equation*}
+  \begin{aligned}
+      x_3& =-1+x_1+x_2\\
+      x_4&= 12-3x_1-4x_2\\
+      x_5&=2-x_1+x_2\\
+      x_6&= 2 +2x_1-x_2\\
+      \hline
+      z&= \phantom{-1} 2x_1+x_2
+     
+    \end{aligned}
+  \end{aligned}
+
+\end{equation*}
+
+
+\end{document}
+
